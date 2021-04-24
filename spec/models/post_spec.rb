@@ -16,4 +16,6 @@ RSpec.describe Post, type: :model do
 
     expect(post.errors[:title].present?).to be_falsey
   end
+
+  it { expect(subject).to validate_presence_of(:content) }
 end
