@@ -1,8 +1,12 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
 
 <h1>Cadastro de Posts</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Título</th>
@@ -26,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
