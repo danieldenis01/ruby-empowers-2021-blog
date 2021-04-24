@@ -4,6 +4,11 @@ class Post < ApplicationRecord
   validates :title, length: { minimum: 2, maximum: 100, allow_blank: true }
   validates :content, presence: true
 
-  # validates :title, :content, presence: true
-  # validates :title, presence: true, length: { minimum: 2, maximum: 100 }
+  before_save :define_slug
+
+  private
+
+  def define_slug
+    self.slug = self.title.downcase
+  end
 end
